@@ -8,27 +8,22 @@ print(student_data.info())
 # There are no null items in this data
 # All data is float64 :D 
 
-# To clean up any empty cells, we could use:
-# new_student_data = student_data.dropna()
-# OR
-# student_data.dropna(inplace = True)
-# However, we have no blanks to clean up, so we will leave this commented out (:
+# Now lets find things out about our data! 
+print()
+print("DESCRIBE")
+print(student_data.describe())
+print()
+print("CORRELATION")
+print(student_data.corr())
 
+# This loads the file to a json
+student_data.to_json('student_data_folder\\student_data.json')
 
-# making some data, this is just a series I think? 
-# randomData = {
-#     "pink" : [1, 2, 3, 4, 5],
-#     "purple" : [6, 7, 8, 9, 10],
-#     "orange" : [11, 12, 13, 14, 15],
-#     "magenta" : [16, 17, 18, 19, 20]
-# }
+# This SHOULD load the file to an excel file, but doesn't for some reason. 
+# student_data.to_excel('student_data_folder\\student_data.xlsx')
 
-# Now we're turning the series into a dataframe
-# We're naming the rows instead of having an index. I can access these by the name now rather than the index
-# df = pd.DataFrame(randomData, index = ['skittles', 'm&ms', 'tortillas', 'candycorn', 'flowers'])
-# print(df)
+# Loads data to file as tab separated 
+student_data.to_csv('student_data_folder\\student_data.txt', sep='\t')
 
-# We are referencing this by the name we gave the index
-# This returns a series, not a dataframe 
-# Don't forget to use .loc
-# print(df.loc['skittles'])
+# Loads data to modified CSV
+student_data.to_csv('student_data_folder\\student_data_modified.csv')
