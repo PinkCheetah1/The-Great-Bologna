@@ -1,0 +1,28 @@
+        Socioeconomic Score  Study Hours  Sleep Hours  Attendance (%)       Grades
+count          1388.000000  1388.000000  1388.000000     1388.000000  1388.000000
+mean              0.552274     4.560807     8.047262       58.536023    40.691643
+std               0.261272     1.897581     1.370700       11.675287     9.467358
+min               0.101280     0.800000     4.800000       40.000000    32.000000
+25%               0.322118     3.475000     7.000000       49.000000    34.000000
+50%               0.545945     3.900000     8.400000       57.000000    35.000000
+75%               0.789610     5.900000     9.100000       66.000000    47.000000
+max               0.999820    10.000000    10.000000      100.000000    91.000000
+
+QUESTION 1: 
+- Does sleep or study hours have more of an impact on grades?
+
+                     Socioeconomic Score  Study Hours  Sleep Hours  Attendance (%)    Grades
+Socioeconomic Score             1.000000     0.002151     0.013618       -0.022793  0.335033
+Study Hours                     0.002151     1.000000    -0.187204        0.485408  0.810807
+Sleep Hours                     0.013618    -0.187204     1.000000       -0.105758 -0.124689
+Attendance (%)                 -0.022793     0.485408    -0.105758        1.000000  0.321930
+Grades                          0.335033     0.810807    -0.124689        0.321930  1.000000
+
+ANSWER 1:
+- Uhhhh num hours of sleep do not have much of an impact (,:
+- Study Hours have a high correlation with grades (0.81)
+
+QUESTION 2: 
+- How many hours of study for good grades? 
+- On average, how many for passing? 
+- On average, how many for >80? 
