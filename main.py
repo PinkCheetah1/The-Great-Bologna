@@ -49,6 +49,7 @@ student_data.plot(kind = 'scatter', x = 'Sleep + Study', y = 'Grades')
 plt.show()
 # Didn't find anything interesting from this /:
 
+
 # I got the following code from ChatGPT, but I understand it. 
 student_data['Pass/Fail'] = student_data['Grades'].apply(lambda x: 'Pass' if x >= 50 else 'Fail')
 print()
@@ -67,8 +68,7 @@ num_bins = percentile_bins.cat.categories.size
 # Create the correct number of labels
 # This gives names to all of the bins that we just made
 # Only makes exactly how many labels we need, booyah 
-labels = [f'{i}%' for i in range(num_bins)]
-
+labels = [i for i in range(num_bins)]
 # Now that we cut everything up and saw how many pieces we can make, 
 # we actually go through and like apply it to the data and stuff
 student_data['Grades Percentile'] = pd.qcut(
@@ -77,8 +77,18 @@ student_data['Grades Percentile'] = pd.qcut(
     labels=labels,
     duplicates='drop'
 )
+
+student_data['Ranked Percentile'] = (student_data['Grades'].rank(pct=True) * 100).astype(int)
 print()
 print(student_data[['Grades', 'Grades Percentile']].head)
+
+student_data['Percentile Number'] = student_data['Grades Percentile'].astype(int)
+student_data = student_data.sort_values(by='Percentile Number', ascending=False)
+top_20 = student_data[student_data['Ranked Percentile'] >= 80]
+# This makes a new dataset that has just the top 20% of students, hopefully haha
+print(top_20[['Study Hours', 'Sleep Hours', 'Grades', 'Grades Percentile', 'Ranked Percentile']])
+print(top_20.describe())
+
 
 # This loads the file to a json
 student_data.to_json('student_data_folder\\student_data.json')

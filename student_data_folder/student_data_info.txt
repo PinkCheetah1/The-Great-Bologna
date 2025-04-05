@@ -24,5 +24,3 @@ ANSWER 1:
 
 QUESTION 2: 
 - How many hours of study for good grades? 
-- On average, how many for passing? 
-- On average, how many for >80? 
