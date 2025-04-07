@@ -6,7 +6,7 @@ The data set I used included socio-economic scores, study hours, sleep hours, at
 
 The purpose of this project is to learn about and gain experience with data analysis using a familiar programming language.
 
-[Software Demo Video](https://youtu.be/f10-EA9yJks)
+[Software Demo Video](https://youtu.be/TnOtg7tOu3E)
 
 # Data Analysis Results
 
